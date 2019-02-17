@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AI Calorie</string>
+    <string name="food_text_hint">Enter text for the food</string>
+    <string name="food_show_label">Show</string>
+    <string name="new_food">New Food</string>
+    <string name="subtite_format">%1$d foods</string>
+    <string name="delete_food">Delete Food</string>
+    <string name="new_day">New Day</string>
+    <string name="food_view_description">Food Image</string>
+    <string name="delete_day">Delete Day</string>
+</resources>
