@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AI Calorie</string>
+    <string name="food_text_hint">Enter text for the food</string>
+    <string name="food_show_label">Show</string>
+    <string name="new_food">New Food</string>
+    <string name="subtite_format">%1$d foods</string>
+    <string name="delete_food">Delete Food</string>
+    <string name="new_day">New Day</string>
+    <string name="food_view_description">Food Image</string>
+    <string name="delete_day">Delete Day</string>
+    <string name="need_permission">Camera permission is needed to run this application</string>
+    <string name="ok">OK</string>
+
+    <string name="not_support">This device does not support AR. </string>
+
+    <string name="action_1">Delete</string>
+    <string name="action_2">Set as first</string>
+    <string name="action_3">Horizontal move</string>
+    <string name="action_4">Vertical move</string>
+    <string name="action_5">Finish Size Measurement</string>
+
+    <string name="action_1_toast">Remove this cube.</string>
+    <string name="action_2_toast">Reorder and set this cube to the first.</string>
+    <string name="action_3_toast">Move on x and z axis.</string>
+    <string name="action_4_toast">Move on y axis.</string>
+
+</resources>

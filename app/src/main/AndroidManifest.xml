@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.co.AICalorie.AICalorie">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera.ar"
+        android:required="true"
+        />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".DayListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FoodListActivity"
+            android:parentActivityName=".DayListActivity" />
+        <activity
+            android:name=".FoodPagerActivity"
+            android:parentActivityName=".FoodPagerActivity" />
+
+        <activity
+            android:name=".ArMeasureActivity" />
+
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.co.AICalorie.AICalorie.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/files" />
+        </provider>
+
+        <!-- Indicates that app supports, but does not require ARCore ("AR Optional").
+         Unlike "AR Required" apps, Google Play Store will not automatically
+         download and install ARCore when the app is installed.
+    -->
+        <meta-data android:name="com.google.ar.core" android:value="required" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="6f9a51e758e886a3a0515db11f5b42724210cfaa"
+        />
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+</manifest>
