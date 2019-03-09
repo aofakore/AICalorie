@@ -94,7 +94,6 @@ public class FoodFragment extends Fragment {
             //mSize = data.getStringExtra("size");
             //Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
 
-            //updateFoodSize(data.getStringExtra("size"));
             updateFoodInfoView(data.getStringExtra("size"));
 
         }
@@ -158,9 +157,6 @@ public class FoodFragment extends Fragment {
         updatePhotoView();
 
         mFoodinfo = (TextView) v.findViewById(R.id.food_info);
-        //SharedPreferences p = getContext().getSharedPreferences("pref", Context.MODE_PRIVATE);
-        //String mSize = p.getString("username", "");
-        //updateFoodInfoView(mSize);
         String text = mFood.getText();
         mFoodinfo.setText(text);
 
@@ -227,13 +223,6 @@ public class FoodFragment extends Fragment {
             mPhotoView.setImageBitmap(bitmap);
         }
 
-    }
-
-    private void updateFoodSize(String size){
-        SharedPreferences p = getContext().getSharedPreferences("data", Context.MODE_PRIVATE);
-        SharedPreferences.Editor edit = p.edit();
-        edit.putString("sizeValue", size);
-        edit.apply();
     }
 
     private void updateFoodInfoView(String size) {
