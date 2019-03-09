@@ -1,9 +1,11 @@
 package com.co.AICalorie.AICalorie;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -24,6 +26,8 @@ import android.widget.ImageView;
 import android.support.v7.app.AlertDialog;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.co.AICalorie.AICalorie.common.helpers.CameraPermissionHelper;
 
 import java.io.File;
 import java.util.List;
@@ -144,6 +148,11 @@ public class FoodFragment extends Fragment {
                             uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 }
 
+                if (!CameraPermissionHelper.hasCameraPermission(getActivity())) {
+                    CameraPermissionHelper.requestCameraPermission(getActivity());
+                    return;
+                }
+
                 startActivityForResult(captureImage, REQUEST_PHOTO);
 
                 Intent myIntent = new Intent(getActivity(), ArMeasureActivity.class);
@@ -161,6 +170,25 @@ public class FoodFragment extends Fragment {
         mFoodinfo.setText(text);
 
         return v;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 1: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                } else {
+                    Toast.makeText(getContext(), "Permission denied to read your External storage", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
     }
 
     @Override
