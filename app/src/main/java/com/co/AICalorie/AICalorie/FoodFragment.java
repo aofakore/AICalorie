@@ -148,6 +148,7 @@ public class FoodFragment extends Fragment {
                             uri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 }
 
+                //Request camera permission
                 if (!CameraPermissionHelper.hasCameraPermission(getActivity())) {
                     CameraPermissionHelper.requestCameraPermission(getActivity());
                     return;
@@ -181,7 +182,7 @@ public class FoodFragment extends Fragment {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 } else {
-                    Toast.makeText(getContext(), "Permission denied to read your External storage", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Permission denied to use Camera", Toast.LENGTH_SHORT).show();
                 }
                 return;
             }

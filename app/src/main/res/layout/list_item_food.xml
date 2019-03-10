@@ -17,6 +17,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Food Text"
+        android:textSize="20dp"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toStartOf="@+id/food_shown"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,15 +25,15 @@
 
     <ImageView
         android:id="@+id/food_shown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_show_food" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--app:srcCompat="@drawable/ic_show_food"-->
+
 
 
 </android.support.constraint.ConstraintLayout>

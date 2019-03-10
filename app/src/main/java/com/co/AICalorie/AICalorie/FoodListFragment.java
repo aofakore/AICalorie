@@ -1,8 +1,11 @@
 package com.co.AICalorie.AICalorie;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.FileProvider;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
 import java.util.List;
 import java.util.UUID;
 
@@ -118,20 +122,36 @@ public class FoodListFragment extends Fragment {
 
         private Food mFood;
         private TextView mTextView;
-        private ImageView mShownImageView;
+        private ImageView mImageView;
+        private File mPhotoFile;
+
 
         public FoodHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_food, parent, false));
             itemView.setOnClickListener(this);
             mTextView = (TextView) itemView.findViewById(R.id.food_text);  //TODO something not right need TITLE
-            mShownImageView = (ImageView) itemView.findViewById(R.id.food_shown);
+            mImageView = (ImageView) itemView.findViewById(R.id.food_shown);
         }
 
         public void bind(Food food) {
             mFood = food;
             //mTextView.setText(mFood.getText()); //TODO changed to title but not appearing
             mTextView.setText(mFood.getTitle());
-            mShownImageView.setVisibility(food.isShown() ? View.VISIBLE : View.GONE);
+            //mImageView.setVisibility(food.isShown() ? View.VISIBLE : View.GONE);
+            mPhotoFile = FoodLab.get(getActivity()).getPhotoFile(mFood);
+            Uri uri = FileProvider.getUriForFile(getActivity(),
+                    "com.co.AICalorie.AICalorie.fileprovider",
+                    mPhotoFile);
+            getActivity().revokeUriPermission(uri,
+                    Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+
+            if (mPhotoFile == null || !mPhotoFile.exists()) {
+                mImageView.setImageDrawable(null);
+            } else {
+                Bitmap bitmap = PictureUtils.getScaledBitmap(
+                        mPhotoFile.getPath(), getActivity());
+                mImageView.setImageBitmap(bitmap);
+            }
         }
 
         @Override
