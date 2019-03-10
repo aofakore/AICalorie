@@ -26,8 +26,12 @@ import android.widget.ImageView;
 import android.support.v7.app.AlertDialog;
 import android.widget.TextView;
 import android.widget.Toast;
+import static com.co.AICalorie.AICalorie.Config.INPUT_SIZE;
 
 import com.co.AICalorie.AICalorie.common.helpers.CameraPermissionHelper;
+import com.co.AICalorie.AICalorie.model.Recognition;
+
+import org.tensorflow.TensorFlow;
 
 import java.io.File;
 import java.util.List;
@@ -47,6 +51,10 @@ public class FoodFragment extends Fragment {
     private ImageView mPhotoView;
     private boolean mDelete;
     private TextView mFoodinfo;
+    private TensorFlowImageRecognizer recognizer;
+    private Bitmap croppedBitmap = null;
+    private String mSize;
+
     //public String mSize="";
 
 
@@ -97,7 +105,6 @@ public class FoodFragment extends Fragment {
             //Toast.makeText(getContext(), data.getStringExtra("size"), Toast.LENGTH_SHORT).show();
             //mSize = data.getStringExtra("size");
             //Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
-
             updateFoodInfoView(data.getStringExtra("size"));
 
         }
@@ -111,6 +118,7 @@ public class FoodFragment extends Fragment {
             getActivity().revokeUriPermission(uri,
                     Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
             updatePhotoView();
+            runStuff();
         }
 
     }
@@ -119,7 +127,6 @@ public class FoodFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.fragment_food, container, false);
-
         mDelete = false;
 
         PackageManager packageManager = getActivity().getPackageManager();
@@ -154,18 +161,17 @@ public class FoodFragment extends Fragment {
                     return;
                 }
 
-                startActivityForResult(captureImage, REQUEST_PHOTO);
-
                 Intent myIntent = new Intent(getActivity(), ArMeasureActivity.class);
                 //startActivity(myIntent);
                 startActivityForResult(myIntent, REQUEST_SIZE);
+
+                startActivityForResult(captureImage, REQUEST_PHOTO);
 
             }
         });
 
         mPhotoView = (ImageView) v.findViewById(R.id.food_image);
         updatePhotoView();
-
         mFoodinfo = (TextView) v.findViewById(R.id.food_info);
         String text = mFood.getText();
         mFoodinfo.setText(text);
@@ -255,13 +261,30 @@ public class FoodFragment extends Fragment {
     }
 
     private void updateFoodInfoView(String size) {
-         mFood.setText(mFood.getTitle() + "\n" +
-                            "Size: " + size + " cm \n" +
-                            "Calorie: " + "Food API" + "\n" +
+         mFood.setText(" " + mFood.getTitle() + "\n" +
+                            " Size: " + size + " cm \n" +
+                            " Calorie: " + "Food API" + "\n" +
                             "\n" +
-                            mFood.getDate());
+                            " " + mFood.getDate());
          String text = mFood.getText();
          mFoodinfo.setText(text);
+    }
 
+    private void runStuff(){
+        recognizer = TensorFlowImageRecognizer.create(getActivity().getAssets());
+        Bitmap bitmap = PictureUtils.getScaledBitmap(
+                mPhotoFile.getPath(), getActivity());
+        croppedBitmap = Bitmap.createScaledBitmap(
+                bitmap, INPUT_SIZE, INPUT_SIZE, true);
+
+        final List<Recognition> results = recognizer.recognizeImage(croppedBitmap);
+        String result = String.valueOf(results.get(0).getTitle());
+
+        mFood.setTitle(result);
+        //String text = mFood.getText();
+        //mFoodinfo.setText(text);
+
+        // return results;
+        //Toast.makeText(getContext(), result, Toast.LENGTH_SHORT).show();
     }
 }

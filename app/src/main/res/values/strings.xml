@@ -17,7 +17,7 @@
     <string name="action_2">Set as first</string>
     <string name="action_3">Horizontal move</string>
     <string name="action_4">Vertical move</string>
-    <string name="action_5">Finish Size Measurement</string>
+    <string name="action_5">Finish</string>
 
     <string name="action_1_toast">Remove this cube.</string>
     <string name="action_2_toast">Reorder and set this cube to the first.</string>
