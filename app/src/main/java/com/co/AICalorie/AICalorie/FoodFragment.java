@@ -1,12 +1,7 @@
 package com.co.AICalorie.AICalorie;
 
-import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -14,7 +9,9 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.FileProvider;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,19 +20,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.support.v7.app.AlertDialog;
 import android.widget.TextView;
 import android.widget.Toast;
-import static com.co.AICalorie.AICalorie.Config.INPUT_SIZE;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.co.AICalorie.AICalorie.common.helpers.CameraPermissionHelper;
 import com.co.AICalorie.AICalorie.model.Recognition;
 
-import org.tensorflow.TensorFlow;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicReference;
+
+import static com.co.AICalorie.AICalorie.Config.INPUT_SIZE;
 
 public class FoodFragment extends Fragment {
 
@@ -105,7 +109,8 @@ public class FoodFragment extends Fragment {
             //Toast.makeText(getContext(), data.getStringExtra("size"), Toast.LENGTH_SHORT).show();
             //mSize = data.getStringExtra("size");
             //Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
-            updateFoodInfoView(data.getStringExtra("size"));
+            getNutritionInformation("apple", data.getStringExtra("size"));
+//            updateFoodInfoView(data.getStringExtra("size"));
 
         }
 
@@ -260,10 +265,10 @@ public class FoodFragment extends Fragment {
 
     }
 
-    private void updateFoodInfoView(String size) {
+    private void updateFoodInfoView(String size, String calories) {
          mFood.setText(" " + mFood.getTitle() + "\n" +
                             " Size: " + size + " cm \n" +
-                            " Calorie: " + "Food API" + "\n" +
+                            " Calorie: " + calories + " kcal \n" +
                             "\n" +
                             " " + mFood.getDate());
          String text = mFood.getText();
@@ -286,5 +291,142 @@ public class FoodFragment extends Fragment {
 
         // return results;
         //Toast.makeText(getContext(), result, Toast.LENGTH_SHORT).show();
+    }
+
+    private void sendSearchRequest(RequestQueue queue, String searchTerm, String qty){
+        String searchUrl = "https://api.nal.usda.gov/ndb/search/?format=json&q=" + searchTerm + "&ds=Standard%20Reference&max=1&sort=r&offset=0&api_key=CFvZE247DQ83dQH8FMAjsZngQLois9J6PgGpxaVg";
+
+        JsonObjectRequest searchRequest = new JsonObjectRequest
+            (Request.Method.GET, searchUrl, null,
+                response -> {
+                    if(response.has("list")){
+                        try {
+                            String ndbno = response.getJSONObject("list").getJSONArray("item").getJSONObject(0).getString("ndbno");
+                            sendReportRequest(queue, ndbno, qty);
+                        } catch (JSONException e) {
+                            // Something failed, set calorie count to zero.
+                            updateFoodInfoView(qty, "0");
+                            e.printStackTrace();
+                        }
+                    } else {
+                        // Something failed, set calorie count to zero.
+                        updateFoodInfoView(qty, "0");
+                    }
+                },
+                error -> {
+                    // TODO: Handle error
+                    System.out.println("ERROR");
+                });
+
+        queue.add(searchRequest);
+    }
+
+    private void sendReportRequest(RequestQueue queue, String ndbno, String qty){
+        String reportUrl = "https://api.nal.usda.gov/ndb/V2/reports?ndbno=" + ndbno + "&type=b&format=json&api_key=CFvZE247DQ83dQH8FMAjsZngQLois9J6PgGpxaVg";
+        // Using NDB Number, find nutrient info for that food.
+        // TODO: Third Search
+        // Calories are measured in kcal under "Energy"
+
+        JsonObjectRequest reportRequest = new JsonObjectRequest
+            (Request.Method.GET, reportUrl, null,
+                response -> {
+                    try {
+                        JSONArray nutrientArray = response.getJSONArray("foods").getJSONObject(0).getJSONObject("food").getJSONArray("nutrients");
+                        JSONObject energyObj;
+                        for (int i = 0; i < nutrientArray.length(); i++){
+                            energyObj = nutrientArray.getJSONObject(i);
+                            if(energyObj.getString("unit") == "kcal"){
+                                JSONArray measures = energyObj.getJSONArray("measures");
+                                getCalCount(measures, qty);
+                                break;
+                            }
+                        }
+                    } catch (JSONException e) {
+                        // Something failed, set calorie count to zero.
+                        updateFoodInfoView(qty, "0");
+                        e.printStackTrace();
+                    }
+                },
+                error -> {
+                    // TODO: Handle error
+                    // Something failed, set calorie count to zero.
+                    updateFoodInfoView(qty, "0");
+                });
+
+        queue.add(reportRequest);
+    }
+
+    private void getCalCount(JSONArray measures, String qty){
+        try {
+            // Check all portion sizes for ones with measurements
+            int nIndex = -1;
+            String pLabel = "";
+            double nSize = 0;
+            double qSize = Double.parseDouble(qty.replaceAll("[^0-9.]+", ""));
+            for(int i = 0; i < measures.length(); i++){
+                pLabel = measures.getJSONObject(i).getString("label");
+                if(pLabel.contains("\"")){
+                    // The portion size includes an inch measure. USDA does everything in inches.
+                    //Parse label for size
+                    String sizeString = pLabel.substring(pLabel.indexOf('('),pLabel.indexOf('"')).replaceAll("[^0-9-/.]+", "");
+                    double sizeVal = 0;
+                    if(sizeString.contains("-") && sizeString.split("-|/").length == 3){
+                        sizeVal = Double.parseDouble(sizeString.split("-|/")[0]) +
+                                (Double.parseDouble(sizeString.split("-|/")[1]) /
+                                Double.parseDouble(sizeString.split("-|/")[2])) * 2.54;
+                    } else {
+                        sizeVal = Double.parseDouble(sizeString.replaceAll("[^0-9.]+", "")) * 2.54;
+                    }
+                    if(nSize == 0 || Math.abs(qSize-sizeVal) < Math.abs(qSize-nSize)){
+                        nSize = sizeVal;
+                        nIndex = i;
+                    }
+                }
+            }
+            // If no portion included a measure, just get one portion.
+            if (nIndex == -1) {
+                String energy = measures.getJSONObject(0).getString("value");
+                updateFoodInfoView(qty, energy);
+            } else {
+                String energy = measures.getJSONObject(nIndex).getString("value");
+                updateFoodInfoView(qty, energy);
+            }
+        } catch (Exception e) {
+            // Something failed, set calorie count to zero.
+            updateFoodInfoView(qty, "0");
+            e.printStackTrace();
+        }
+    }
+
+    private void getNutritionInformation(String searchTerm, String qty) {
+        String rawSearchUrl = "https://api.nal.usda.gov/ndb/search/?format=json&q=" + searchTerm + ",raw&ds=Standard%20Reference&max=1&sort=r&offset=0&api_key=CFvZE247DQ83dQH8FMAjsZngQLois9J6PgGpxaVg";
+        //Make search call to find NDB Number (ndbno)
+        // TODO: First Search
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+
+        // Request a string response from the provided URL.
+        JsonObjectRequest rawSearchRequest = new JsonObjectRequest
+            (Request.Method.GET, rawSearchUrl, null,
+            response -> {
+                if(response.has("list")){
+                    try {
+                        String ndbno = response.getJSONObject("list").getJSONArray("item").getJSONObject(0).getString("ndbno");
+                        sendReportRequest(queue, ndbno, qty);
+                    } catch (JSONException e) {
+                        // Something failed, set calorie count to zero.
+                        updateFoodInfoView(qty, "0");
+                        e.printStackTrace();
+                    }
+                } else {
+                    sendSearchRequest(queue, searchTerm, qty);
+                }
+            },
+            error -> {
+                // TODO: Handle error
+                // Something failed, set calorie count to zero.
+                updateFoodInfoView(qty, "0");
+            });
+
+        queue.add(rawSearchRequest);
     }
 }
