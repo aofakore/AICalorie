@@ -1,7 +1,12 @@
 package com.co.AICalorie.AICalorie;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -9,9 +14,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.app.Fragment;
 import android.support.v4.content.FileProvider;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,8 +23,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.support.v7.app.AlertDialog;
 import android.widget.TextView;
 import android.widget.Toast;
+import static com.co.AICalorie.AICalorie.Config.INPUT_SIZE;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -30,6 +35,7 @@ import com.android.volley.toolbox.Volley;
 import com.co.AICalorie.AICalorie.common.helpers.CameraPermissionHelper;
 import com.co.AICalorie.AICalorie.model.Recognition;
 
+import org.tensorflow.TensorFlow;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,9 +43,6 @@ import org.json.JSONObject;
 import java.io.File;
 import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.atomic.AtomicReference;
-
-import static com.co.AICalorie.AICalorie.Config.INPUT_SIZE;
 
 public class FoodFragment extends Fragment {
 
