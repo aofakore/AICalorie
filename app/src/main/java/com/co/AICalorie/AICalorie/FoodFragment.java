@@ -112,9 +112,7 @@ public class FoodFragment extends Fragment {
             //Toast.makeText(getContext(), data.getStringExtra("size"), Toast.LENGTH_SHORT).show();
             //mSize = data.getStringExtra("size");
             //Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
-            getNutritionInformation("apple", data.getStringExtra("size"));
-//            updateFoodInfoView(data.getStringExtra("size"));
-
+            getNutritionInformation(mFood.getTitle(), data.getStringExtra("size"));
         }
 
         if (requestCode == REQUEST_PHOTO){
@@ -285,8 +283,13 @@ public class FoodFragment extends Fragment {
         croppedBitmap = Bitmap.createScaledBitmap(
                 bitmap, INPUT_SIZE, INPUT_SIZE, true);
 
-        final List<Recognition> results = recognizer.recognizeImage(croppedBitmap);
-        String result = String.valueOf(results.get(0).getTitle());
+        List<Recognition> results = null;
+        String result = "apple";
+        try {
+            results = recognizer.recognizeImage(croppedBitmap);
+            result = String.valueOf(results.get(0).getTitle());
+        } catch(Exception e) {
+        }
 
         mFood.setTitle(result);
         //String text = mFood.getText();
@@ -338,7 +341,7 @@ public class FoodFragment extends Fragment {
                         JSONObject energyObj;
                         for (int i = 0; i < nutrientArray.length(); i++){
                             energyObj = nutrientArray.getJSONObject(i);
-                            if(energyObj.getString("unit") == "kcal"){
+                            if(energyObj.getString("unit").equals("kcal")){
                                 JSONArray measures = energyObj.getJSONArray("measures");
                                 getCalCount(measures, qty);
                                 break;

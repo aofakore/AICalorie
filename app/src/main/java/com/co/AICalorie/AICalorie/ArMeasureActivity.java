@@ -488,6 +488,7 @@ public class ArMeasureActivity extends AppCompatActivity {
                     case 4:
                         //toast(R.string.action_5);
                         //Toast.makeText(getApplicationContext(), String.valueOf((((int)(total * 10f))/10f)) , Toast.LENGTH_SHORT).show();
+                        popupWindow.dismiss();
                         Intent data = new Intent();
                         String returnValue = String.valueOf((((int)(total * 10f))/10f));
                         data.putExtra("size", returnValue);
