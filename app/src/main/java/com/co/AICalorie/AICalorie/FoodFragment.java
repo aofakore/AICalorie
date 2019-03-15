@@ -416,6 +416,10 @@ public class FoodFragment extends Fragment {
     }
 
     private void getNutritionInformation(String searchTerm, String qty) {
+        if(searchTerm.equals("")){
+            updateFoodInfoView(qty, "0");
+            return;
+        }
         String rawSearchUrl = "https://api.nal.usda.gov/ndb/search/?format=json&q=" + searchTerm + ",raw&ds=Standard%20Reference&max=1&sort=r&offset=0&api_key=CFvZE247DQ83dQH8FMAjsZngQLois9J6PgGpxaVg";
         //Make search call to find NDB Number (ndbno)
         // TODO: First Search
