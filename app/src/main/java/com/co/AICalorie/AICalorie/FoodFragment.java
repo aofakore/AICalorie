@@ -377,9 +377,9 @@ public class FoodFragment extends Fragment {
                     String sizeString = pLabel.substring(pLabel.indexOf('('),pLabel.indexOf('"')).replaceAll("[^0-9-/.]+", "");
                     double sizeVal = 0;
                     if(sizeString.contains("-") && sizeString.split("-|/").length == 3){
-                        sizeVal = Double.parseDouble(sizeString.split("-|/")[0]) +
+                        sizeVal = (Double.parseDouble(sizeString.split("-|/")[0]) +
                                 (Double.parseDouble(sizeString.split("-|/")[1]) /
-                                Double.parseDouble(sizeString.split("-|/")[2])) * 2.54;
+                                Double.parseDouble(sizeString.split("-|/")[2]))) * 2.54;
                     } else {
                         sizeVal = Double.parseDouble(sizeString.replaceAll("[^0-9.]+", "")) * 2.54;
                     }
@@ -391,7 +391,10 @@ public class FoodFragment extends Fragment {
             }
             // If no portion included a measure, just get one portion.
             if (nIndex == -1) {
-                String energy = measures.getJSONObject(0).getString("value");
+                String energy = new Double(Math.round(Math.max(
+                        Double.parseDouble(measures.getJSONObject(0).getString("value")),
+                        Double.parseDouble(measures.getJSONObject(0).getString("value"))*200/measures.getJSONObject(0).getDouble("eqv")
+                ))).toString();
                 updateFoodInfoView(qty, energy);
             } else {
                 String energy = measures.getJSONObject(nIndex).getString("value");
