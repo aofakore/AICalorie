@@ -44,6 +44,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.HashMap;
 
 public class FoodFragment extends Fragment {
 
@@ -288,7 +289,20 @@ public class FoodFragment extends Fragment {
         String result = "";
         try {
             results = recognizer.recognizeImage(croppedBitmap);
-            result = String.valueOf(results.get(0).getTitle());
+            HashMap<String, String> foodLabels = new HashMap<String, String>();
+            foodLabels.put("apple","apple");
+            foodLabels.put("banana","banana");
+            foodLabels.put("sandwich","sandwich");
+            foodLabels.put("orange","orange");
+            foodLabels.put("broccoli","broccoli");
+            foodLabels.put("carrot","carrot");
+            foodLabels.put("hot dog","hot dog");
+            foodLabels.put("pizza","pizza");
+            foodLabels.put("donut","donut");
+            foodLabels.put("cake","cake");
+            if(foodLabels.containsKey(results.get(0).getTitle())){
+                result = String.valueOf(results.get(0).getTitle());
+            }
             //Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
             //result = String.valueOf(results.get(1).getTitle());
             //Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
