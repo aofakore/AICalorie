@@ -41,6 +41,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -284,10 +285,17 @@ public class FoodFragment extends Fragment {
                 bitmap, INPUT_SIZE, INPUT_SIZE, true);
 
         List<Recognition> results = null;
-        String result = "apple";
+        String result = "";
         try {
             results = recognizer.recognizeImage(croppedBitmap);
             result = String.valueOf(results.get(0).getTitle());
+            //Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
+            //result = String.valueOf(results.get(1).getTitle());
+            //Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
+            //result = String.valueOf(results);
+            //result = Arrays.toString(results.toArray());
+
+
         } catch(Exception e) {
         }
 
