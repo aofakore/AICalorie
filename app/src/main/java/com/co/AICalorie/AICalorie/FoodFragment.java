@@ -51,6 +51,11 @@ public class FoodFragment extends Fragment {
     private static final int REQUEST_PHOTO = 0;
     private static final int REQUEST_SIZE = 2;
 
+    private static final String YOLO_MODEL_FILE = "file:///android_asset/yolov2-tiny.pb";
+    private static final int YOLO_INPUT_SIZE = 416;
+    private static final String YOLO_INPUT_NAME = "input";
+    private static final String YOLO_OUTPUT_NAMES = "output";
+    private static final int YOLO_BLOCK_SIZE = 32;
 
     private Food mFood;
     private File mPhotoFile;
@@ -62,6 +67,7 @@ public class FoodFragment extends Fragment {
     private TensorFlowImageRecognizer recognizer;
     private Bitmap croppedBitmap = null;
     private String mSize;
+    private Classifier detector;
 
     //public String mSize="";
 
@@ -125,7 +131,7 @@ public class FoodFragment extends Fragment {
             getActivity().revokeUriPermission(uri,
                     Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
             updatePhotoView();
-            runStuff();
+            runStuff2();
         }
 
     }
@@ -283,7 +289,7 @@ public class FoodFragment extends Fragment {
                 mPhotoFile.getPath(), getActivity());
         croppedBitmap = Bitmap.createScaledBitmap(
                 bitmap, INPUT_SIZE, INPUT_SIZE, true);
-
+        //updatePhotoView(croppedBitmap);
         List<Recognition> results = null;
         String result = "";
         try {
@@ -305,6 +311,33 @@ public class FoodFragment extends Fragment {
 
         // return results;
         //Toast.makeText(getContext(), result, Toast.LENGTH_SHORT).show();
+    }
+
+    private void runStuff2(){
+        detector = TensorFlowYoloDetector.create(
+                getActivity().getAssets(),
+                YOLO_MODEL_FILE,
+                YOLO_INPUT_SIZE,
+                YOLO_INPUT_NAME,
+                YOLO_OUTPUT_NAMES,
+                YOLO_BLOCK_SIZE);
+        Bitmap bitmap = PictureUtils.getScaledBitmap(
+                mPhotoFile.getPath(), getActivity());
+        croppedBitmap = Bitmap.createScaledBitmap(
+                bitmap, YOLO_INPUT_SIZE, YOLO_INPUT_SIZE, true);
+        //final List<Classifier.Recognition> results = detector.recognizeImage(croppedBitmap);
+        List<Classifier.Recognition> results = null;
+        String result = "";
+        try {
+            results = detector.recognizeImage(croppedBitmap);
+            //result = String.valueOf(results);
+            result = Arrays.toString(results.toArray());
+            //result = String.valueOf(results.get(0).getTitle());
+
+        } catch(Exception e) {
+        }
+
+        mFood.setTitle(result);
     }
 
     private void sendSearchRequest(RequestQueue queue, String searchTerm, String qty){
