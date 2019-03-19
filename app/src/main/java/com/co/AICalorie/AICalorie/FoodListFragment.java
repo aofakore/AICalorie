@@ -94,11 +94,12 @@ public class FoodListFragment extends Fragment {
                     Intent intent = FoodPagerActivity
                             .newIntent(getActivity(), food.getId());
                     startActivity(intent);
-
+                    return true;
                 }
             }
             case R.id.option1: {
                 Toast.makeText(getActivity(), "Food Count: " + String.valueOf(mDay.getFoodCount()), Toast.LENGTH_SHORT).show();
+                return true;
             }
             default: {
                 return super.onOptionsItemSelected(item);
