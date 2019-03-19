@@ -300,9 +300,9 @@ public class FoodFragment extends Fragment {
             foodLabels.put("pizza","pizza");
             foodLabels.put("donut","donut");
             foodLabels.put("cake","cake");
-            if(foodLabels.containsKey(results.get(0).getTitle())){
-                //result = String.valueOf(results.get(0).getTitle());
-            }
+//            if(foodLabels.containsKey(results.get(0).getTitle())){
+//                result = String.valueOf(results.get(0).getTitle());
+//            }
             result = String.valueOf(results.get(0).getTitle());
 
             //Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
