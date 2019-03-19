@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.List;
@@ -53,7 +54,6 @@ public class FoodListFragment extends Fragment {
         mFoodRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         mDailyCalorie = (TextView) view.findViewById(R.id.food_daily_calorie);
-        mDailyCalorie.setText("whatever");
         updateUI();
 
         return view;
@@ -81,7 +81,6 @@ public class FoodListFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.new_food: {
 
-                //String foodTitle = "";
                 String foodTitle ="Name\n";
                 if (!foodTitle.isEmpty()) {
                     Food food = new Food();
@@ -98,7 +97,9 @@ public class FoodListFragment extends Fragment {
 
                 }
             }
-
+            case R.id.option1: {
+                Toast.makeText(getActivity(), "Food Count: " + String.valueOf(mDay.getFoodCount()), Toast.LENGTH_SHORT).show();
+            }
             default: {
                 return super.onOptionsItemSelected(item);
             }
@@ -117,6 +118,8 @@ public class FoodListFragment extends Fragment {
             mAdapter.setFoods(foods);
             mAdapter.notifyDataSetChanged();
         }
+
+        mDay.setFoodCount(foods.size());
 
         Double sum=0.0;
         for (int i=0; i<foods.size(); i++){
@@ -188,12 +191,6 @@ public class FoodListFragment extends Fragment {
         public void setFoods(List<Food> foods) {
             mFoods = foods;
         }
-//        public void getSumDailyCalorie(){
-//            Double sum=0.0d;
-//            for (int i=0; i<mFoods.size(); i++){
-//                sum += mFoods.get(i).getCalorie();
-//            }
-//        }
 
         @Override
         public FoodHolder onCreateViewHolder(ViewGroup parent, int viewType) {

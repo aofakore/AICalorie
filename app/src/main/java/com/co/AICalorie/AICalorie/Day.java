@@ -12,7 +12,7 @@ public class Day {
     private UUID mId;
     private String mTitle;
     private List<Food> mFoods;
-
+    private int mFoodCount;
     public Day() {
 
         this(UUID.randomUUID());
@@ -45,5 +45,13 @@ public class Day {
         String dayListDate = df.format(today);
 
         return dayListDate;
+    }
+
+    public void setFoodCount(int count){
+        mFoodCount = count;
+    }
+
+    public int getFoodCount(){
+        return mFoodCount;
     }
 }

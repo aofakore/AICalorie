@@ -9,17 +9,17 @@
 
     <item
         android:id="@+id/option1"
-        android:title="Option 1"
+        android:title="Food Count"
         />
 
-    <item
-        android:id="@+id/option2"
-        android:title="Option 2"
-        />
+    <!--<item-->
+        <!--android:id="@+id/option2"-->
+        <!--android:title="Option 2"-->
+        <!--/>-->
 
-    <item
-        android:id="@+id/option3"
-        android:title="Option 3"
-        />
+    <!--<item-->
+        <!--android:id="@+id/option3"-->
+        <!--android:title="Option 3"-->
+        <!--/>-->
 
 </menu>
