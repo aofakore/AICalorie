@@ -13,7 +13,7 @@ public class Food {
     private String mText;
     private boolean mIsShown;
     private UUID mDAY_uuid;
-    private double mSize;
+    private Double mCalorie;
     private Date mDate;
 
     public Food() {
@@ -39,6 +39,14 @@ public class Food {
 
     public void setTitle(String title) {
         mTitle = title;
+    }
+
+    public Double getCalorie(){
+        return mCalorie;
+    }
+
+    public void setCalorie(Double calorie){
+        mCalorie = calorie;
     }
 
     public String getText() {

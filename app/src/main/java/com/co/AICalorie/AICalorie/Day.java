@@ -42,8 +42,8 @@ public class Day {
         String pattern = "MMMM d, yyyy";
         DateFormat df = new SimpleDateFormat(pattern);
         Date today = Calendar.getInstance().getTime();
-        String reportDate = df.format(today);
+        String dayListDate = df.format(today);
 
-        return reportDate;
+        return dayListDate;
     }
 }

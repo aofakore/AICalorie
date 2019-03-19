@@ -123,7 +123,7 @@ public class FoodLab {
         values.put(FoodTable.Cols.TEXT, food.getText());
         values.put(FoodTable.Cols.DAY_UUID, food.getDAY_uuid().toString());
         values.put(FoodTable.Cols.SHOWN, food.isShown() ? 1 : 0 );
-
+        values.put(FoodTable.Cols.CALORIE, food.getCalorie());
         return values;
     }
 }

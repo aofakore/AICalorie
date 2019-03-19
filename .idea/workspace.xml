@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="CMakeSettings">
@@ -15,26 +15,29 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd51c5d3-059a-4795-b762-49b6cf950719" name="Default" comment="nothing">
+    <list default="true" id="dd51c5d3-059a-4795-b762-49b6cf950719" name="Default" comment="Added calorie to DB, added total calories each day">
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/tiny-yolo-voc-graph.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/tiny-yolo-voc-labels.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/labels.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/labels.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Day.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Day.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Food.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodLab.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodLab.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodListFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieBaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieBaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieDbSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieDbSchema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/FoodCursorWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/FoodCursorWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_food_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_food_list.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,11 +60,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Config.java">
+      <file leaf-file-name="FoodFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            <state relative-caret-position="445">
+              <caret line="311" column="53" lean-forward="true" selection-start-line="311" selection-start-column="53" selection-end-line="311" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#10277#10293#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_food.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FoodCursorWrapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/FoodCursorWrapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FoodListFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodListFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="128" column="60" selection-start-line="128" selection-start-column="60" selection-end-line="128" selection-end-column="60" />
+              <folding>
+                <element signature="e#5822#5823#0" expanded="true" />
+                <element signature="e#5860#5861#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FoodLab.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodLab.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -70,25 +120,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodPagerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="20" column="16" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="YOLOClassifier.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/YOLOClassifier.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="931">
-              <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FoodFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="278" selection-start-line="278" selection-end-line="278" />
+              <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,25 +128,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="labels.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/assets/labels.txt">
+      <file leaf-file-name="Day.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Day.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+            <state relative-caret-position="243">
+              <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Food.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Food.java">
+      <file leaf-file-name="fragment_food_list.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_list.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
-              <folding>
-                <element signature="e#862#863#0" expanded="true" />
-                <element signature="e#890#891#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="131">
+              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_item_day.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_day.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state />
           </provider>
         </entry>
       </file>
@@ -122,36 +175,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>assets</find>
-      <find>random</find>
-      <find>tiny</find>
-      <find>LABEL_FILE</find>
-      <find>run</find>
-      <find>name</find>
-      <find>title</find>
-      <find>create</find>
-      <find>updateFoodInfoView</find>
-      <find>finish</find>
-      <find>statusCode</find>
-      <find>core</find>
-      <find>contrib</find>
-      <find>build</find>
-      <find>/kernels/</find>
-      <find>kernels</find>
-      <find>tensorflow</find>
-      <find>bazel</find>
-      <find>startactivity</find>
-      <find>updatefood</find>
       <find>results</find>
       <find>resultinfo</find>
       <find>array</find>
       <find>outputsize</find>
-      <find>.pb</find>
       <find>result</find>
       <find>updateFoodInf</find>
       <find>size</find>
       <find>tv</find>
       <find>try</find>
+      <find>text</find>
+      <find>title</find>
+      <find>.pb</find>
+      <find>&quot;day</find>
+      <find>for</find>
+      <find>for</find>
+      <find>insert</find>
+      <find>oncreate</find>
+      <find>backup</find>
+      <find>setsize</find>
+      <find>get</find>
+      <find>updateFoodInfoView</find>
+      <find>view</find>
+      <find>fragment_food</find>
+      <find>foodinfo</find>
+      <find>mfoodinfo</find>
+      <find>sqlite</find>
+      <find>energy</find>
+      <find>cursor</find>
+      <find>getfoods</find>
+      <find>setFoods</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Dave\AppData\Local\Android\Sdk\platforms\android-27\android.jar!\android\content</dir>
@@ -161,7 +214,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ar-measure" />
+        <entry key="$PROJECT_DIR$" value="AI_different_implementation" />
       </map>
     </option>
   </component>
@@ -2467,13 +2520,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_food.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/ar_measure_activity.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/DayListFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Day.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieBaseHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieDbSchema.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/FoodCursorWrapper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodLab.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Food.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_food.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/util/ClassAttrProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodActivity.java" />
@@ -2484,15 +2530,25 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/assets/tiny-yolo-voc-labels.txt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Config.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodPagerActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Day.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieDbSchema.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodLab.java" />
         <option value="$PROJECT_DIR$/app/src/main/assets/labels.txt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieBaseHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/FoodCursorWrapper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Food.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodListFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_food_list.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="950" />
+    <option name="width" value="979" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -2500,8 +2556,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2619,6 +2673,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2640,7 +2695,25 @@
             <path>
               <item name="AICalorie" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="AICalorie" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AICalorie" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="AICalorie" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="AICalorie" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="AICalorie" type="1abcf292:AndroidViewProjectNode" />
@@ -2650,6 +2723,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2786,116 +2860,94 @@
       <option name="presentableId" value="Default" />
       <updated>1551937999282</updated>
     </task>
+    <task id="LOCAL-00001" summary="tried a different implementation for AI">
+      <created>1552940926734</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1552940926734</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="12" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info id="Build Variants" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067115" side_tool="true" weight="0.32909605" />
+      <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.49934897" weight="0.8587571" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49932885" weight="0.18361582" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997175" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32909605" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32909605" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="7" />
-      <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067115" side_tool="true" weight="0.32909605" />
+      <window_info anchor="right" id="Preview" order="4" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32909605" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.49934897" weight="0.74717516" />
       <window_info id="Captures" order="4" weight="0.25" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28456375" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49932885" weight="0.32909605" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1818792" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32909605" />
       <window_info anchor="right" id="Gradle" order="6" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Build Variants" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067115" side_tool="true" weight="0.32909605" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28456375" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" id="Preview" order="4" />
+      <window_info anchor="bottom" id="Logcat" order="10" sideWeight="0.49934897" weight="0.74717516" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Image Layers" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="bottom" id="Android Profiler" order="12" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32909605" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49932885" weight="0.32909605" />
+      <window_info id="Captures" order="4" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="6" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="Designer" order="2" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added calorie to DB, added total calories each day" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added calorie to DB, added total calories each day" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_show_food.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="35" column="50" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="50" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_list.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/util/ImageUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/util/comparator/CompareSizesByArea.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/util/math/SoftMax.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/util/math/ArgMax.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/model/BoundingBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/model/BoxPosition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/model/Recognition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -2904,13 +2956,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_food.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/common/helpers/CameraPermissionHelper.java">
@@ -2962,45 +3014,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/FoodCursorWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/DayCursorWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieDbSchema.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-27/android.jar!/java/util/UUID.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Day.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieBaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -3020,13 +3037,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="21" column="60" lean-forward="true" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -3061,16 +3071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -3096,20 +3096,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/android/volley/R.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodLab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="54" column="47" selection-start-line="54" selection-start-column="47" selection-end-line="54" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -3128,13 +3114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="494" column="30" selection-start-line="494" selection-start-column="24" selection-end-line="494" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodPagerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -3157,45 +3136,196 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Food.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/tiny-yolo-voc-labels.txt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="304">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-27/android.jar!/android/database/CursorWindow.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="163" selection-start-line="163" selection-end-line="163" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-27/android.jar!/android/database/sqlite/SQLiteDatabase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_day_list.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/DayListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="24" />
           <folding>
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#890#891#0" expanded="true" />
+            <element signature="e#1656#2172#0" expanded="true" />
+            <element signature="e#2171#2172#0" expanded="true" />
+            <element signature="method#showAddDayDialog#0;class#DayListFragment#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/labels.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="278" selection-start-line="278" selection-end-line="278" />
+        <state relative-caret-position="395">
+          <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/DayCursorWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieDbSchema.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Food.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="26" />
+          <folding>
+            <element signature="e#878#879#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/AICalorieBaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/database/FoodCursorWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/DayListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/DayLab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1026">
+          <caret line="34" column="51" lean-forward="true" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Day.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodPagerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="45" column="39" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/tiny-yolo-voc-labels.txt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="551">
+          <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/Config.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        <state relative-caret-position="437">
+          <caret line="128" column="60" selection-start-line="128" selection-start-column="60" selection-end-line="128" selection-end-column="60" />
+          <folding>
+            <element signature="e#5822#5823#0" expanded="true" />
+            <element signature="e#5860#5861#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/labels.txt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_day.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_food_list.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodLab.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/co/AICalorie/AICalorie/FoodFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="311" column="53" lean-forward="true" selection-start-line="311" selection-start-column="53" selection-end-line="311" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10277#10293#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

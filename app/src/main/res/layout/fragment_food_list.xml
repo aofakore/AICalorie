@@ -10,9 +10,25 @@
 
         android:id="@+id/food_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:layout_marginBottom="43dp"
+        >
     </android.support.v7.widget.RecyclerView>
 
+
+    <TextView
+        android:id="@+id/food_daily_calorie"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:textAlignment="gravity"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+
+
+        />
     <!--<android.support.design.widget.FloatingActionButton-->
     <!--android:id="@+id/floating_add_food_action_button"-->
     <!--android:layout_width="wrap_content"-->

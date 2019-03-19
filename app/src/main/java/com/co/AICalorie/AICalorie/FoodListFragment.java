@@ -28,6 +28,7 @@ public class FoodListFragment extends Fragment {
     private RecyclerView mFoodRecyclerView;
     private FoodAdapter mAdapter;
     private Day mDay;
+    private TextView mDailyCalorie;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,8 @@ public class FoodListFragment extends Fragment {
                 .findViewById(R.id.food_recycler_view);
         mFoodRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-
+        mDailyCalorie = (TextView) view.findViewById(R.id.food_daily_calorie);
+        mDailyCalorie.setText("whatever");
         updateUI();
 
         return view;
@@ -87,6 +89,7 @@ public class FoodListFragment extends Fragment {
                     food.setTitle(foodTitle);
                     food.setDAY_uuid(mDay.getId());
                     food.setShown(true);
+                    //food.setCalorie(0.0d);
                     FoodLab.get(getActivity()).addFood(food);
 
                     Intent intent = FoodPagerActivity
@@ -115,6 +118,12 @@ public class FoodListFragment extends Fragment {
             mAdapter.notifyDataSetChanged();
         }
 
+        Double sum=0.0;
+        for (int i=0; i<foods.size(); i++){
+            sum += foods.get(i).getCalorie();
+        }
+        int printsum = sum.intValue();
+        mDailyCalorie.setText("Total Calories: " + String.valueOf(printsum) + " cal");
     }
 
     private class FoodHolder extends RecyclerView.ViewHolder
@@ -179,6 +188,12 @@ public class FoodListFragment extends Fragment {
         public void setFoods(List<Food> foods) {
             mFoods = foods;
         }
+//        public void getSumDailyCalorie(){
+//            Double sum=0.0d;
+//            for (int i=0; i<mFoods.size(); i++){
+//                sum += mFoods.get(i).getCalorie();
+//            }
+//        }
 
         @Override
         public FoodHolder onCreateViewHolder(ViewGroup parent, int viewType) {

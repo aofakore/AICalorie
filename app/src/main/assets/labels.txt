@@ -73,7 +73,7 @@ sink
 refrigerator
 book
 clock
-vase
+apple
 scissors
 teddy bear
 hair drier

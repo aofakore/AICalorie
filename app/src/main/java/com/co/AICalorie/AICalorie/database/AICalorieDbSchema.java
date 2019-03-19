@@ -11,6 +11,8 @@ public class AICalorieDbSchema {
             public static final String TITLE = "title";
             public static final String TEXT = "text";
             public static final String SHOWN = "shown";
+            public static final String CALORIE = "calorie";
+
         }
     }
 

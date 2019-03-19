@@ -19,7 +19,8 @@ public class AICalorieBaseHelper extends SQLiteOpenHelper {
             FoodTable.Cols.DAY_UUID + ", " +
             FoodTable.Cols.TITLE + ", " +
             FoodTable.Cols.TEXT + ", " +
-            FoodTable.Cols.SHOWN + ")";
+            FoodTable.Cols.SHOWN + ", " +
+            FoodTable.Cols.CALORIE + ")";
 
     // Day table create statement
     private static final String create_table_days = "create table " + DayTable.NAME + "(" +
@@ -30,6 +31,11 @@ public class AICalorieBaseHelper extends SQLiteOpenHelper {
     public AICalorieBaseHelper(Context context) {
 
         super(context, DATABASE_NAME, null, VERSION);
+    }
+
+    public String getDailyCalorie(){
+
+        return "sum";
     }
 
     @Override

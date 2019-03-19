@@ -271,7 +271,7 @@ public class FoodFragment extends Fragment {
     private void updateFoodInfoView(String size, String calories) {
          mFood.setText(" " + mFood.getTitle() + "\n" +
                             " Size: " + size + " cm \n" +
-                            " Calorie: " + calories + " kcal \n" +
+                            " Calories: " + calories + " cal \n" +
                             "\n" +
                             " " + mFood.getDate());
          String text = mFood.getText();
@@ -301,14 +301,15 @@ public class FoodFragment extends Fragment {
             foodLabels.put("donut","donut");
             foodLabels.put("cake","cake");
             if(foodLabels.containsKey(results.get(0).getTitle())){
-                result = String.valueOf(results.get(0).getTitle());
+                //result = String.valueOf(results.get(0).getTitle());
             }
+            result = String.valueOf(results.get(0).getTitle());
+
             //Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
             //result = String.valueOf(results.get(1).getTitle());
             //Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
             //result = String.valueOf(results);
             //result = Arrays.toString(results.toArray());
-
 
         } catch(Exception e) {
         }
@@ -333,12 +334,14 @@ public class FoodFragment extends Fragment {
                             sendReportRequest(queue, ndbno, qty);
                         } catch (JSONException e) {
                             // Something failed, set calorie count to zero.
-                            updateFoodInfoView(qty, "0");
+                            mFood.setCalorie(0.0d);
+                            updateFoodInfoView(qty, mFood.getCalorie().toString());
                             e.printStackTrace();
                         }
                     } else {
                         // Something failed, set calorie count to zero.
-                        updateFoodInfoView(qty, "0");
+                        mFood.setCalorie(0.0d);
+                        updateFoodInfoView(qty, mFood.getCalorie().toString());
                     }
                 },
                 error -> {
@@ -371,14 +374,16 @@ public class FoodFragment extends Fragment {
                         }
                     } catch (JSONException e) {
                         // Something failed, set calorie count to zero.
-                        updateFoodInfoView(qty, "0");
+                        mFood.setCalorie(0.0d);
+                        updateFoodInfoView(qty, mFood.getCalorie().toString());
                         e.printStackTrace();
                     }
                 },
                 error -> {
                     // TODO: Handle error
                     // Something failed, set calorie count to zero.
-                    updateFoodInfoView(qty, "0");
+                    mFood.setCalorie(0.0d);
+                    updateFoodInfoView(qty, mFood.getCalorie().toString());
                 });
 
         queue.add(reportRequest);
@@ -413,25 +418,30 @@ public class FoodFragment extends Fragment {
             }
             // If no portion included a measure, just get one portion.
             if (nIndex == -1) {
-                String energy = new Double(Math.round(Math.max(
+                Double energy = new Double(Math.round(Math.max(
                         Double.parseDouble(measures.getJSONObject(0).getString("value")),
                         Double.parseDouble(measures.getJSONObject(0).getString("value"))*200/measures.getJSONObject(0).getDouble("eqv")
-                ))).toString();
-                updateFoodInfoView(qty, energy);
+                )));
+                mFood.setCalorie(energy);
+                updateFoodInfoView(qty, mFood.getCalorie().toString());
             } else {
                 String energy = measures.getJSONObject(nIndex).getString("value");
-                updateFoodInfoView(qty, energy);
+                Double energyD = Double.parseDouble(energy);
+                mFood.setCalorie(energyD);
+                updateFoodInfoView(qty, mFood.getCalorie().toString());
             }
         } catch (Exception e) {
             // Something failed, set calorie count to zero.
-            updateFoodInfoView(qty, "0");
+            mFood.setCalorie(0.0d);
+            updateFoodInfoView(qty, mFood.getCalorie().toString());
             e.printStackTrace();
         }
     }
 
     private void getNutritionInformation(String searchTerm, String qty) {
         if(searchTerm.equals("")){
-            updateFoodInfoView(qty, "0");
+            mFood.setCalorie(0.0d);
+            updateFoodInfoView(qty, mFood.getCalorie().toString());
             return;
         }
         String rawSearchUrl = "https://api.nal.usda.gov/ndb/search/?format=json&q=" + searchTerm + ",raw&ds=Standard%20Reference&max=1&sort=r&offset=0&api_key=CFvZE247DQ83dQH8FMAjsZngQLois9J6PgGpxaVg";
@@ -449,7 +459,8 @@ public class FoodFragment extends Fragment {
                         sendReportRequest(queue, ndbno, qty);
                     } catch (JSONException e) {
                         // Something failed, set calorie count to zero.
-                        updateFoodInfoView(qty, "0");
+                        mFood.setCalorie(0.0d);
+                        updateFoodInfoView(qty, mFood.getCalorie().toString());
                         e.printStackTrace();
                     }
                 } else {
@@ -459,7 +470,8 @@ public class FoodFragment extends Fragment {
             error -> {
                 // TODO: Handle error
                 // Something failed, set calorie count to zero.
-                updateFoodInfoView(qty, "0");
+                mFood.setCalorie(0.0d);
+                updateFoodInfoView(qty, mFood.getCalorie().toString());
             });
 
         queue.add(rawSearchRequest);
