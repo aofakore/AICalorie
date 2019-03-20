@@ -44,16 +44,16 @@ fork
 knife
 spoon
 bowl
-banana
-apple
-sandwich
-orange
-broccoli
-carrot
-hot dog
-pizza
-donut
-cake
+Banana
+Apple
+Sandwich
+Orange
+Broccoli
+Carrot
+Hot dog
+Pizza
+Donut
+Cake
 chair
 sofa
 pottedplant
@@ -75,6 +75,6 @@ book
 clock
 vase
 scissors
-teddy bear
+Broccoli
 hair drier
 toothbrush

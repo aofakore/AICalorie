@@ -290,20 +290,20 @@ public class FoodFragment extends Fragment {
         try {
             results = recognizer.recognizeImage(croppedBitmap);
             HashMap<String, String> foodLabels = new HashMap<String, String>();
-            foodLabels.put("apple","apple");
-            foodLabels.put("banana","banana");
-            foodLabels.put("sandwich","sandwich");
-            foodLabels.put("orange","orange");
-            foodLabels.put("broccoli","broccoli");
-            foodLabels.put("carrot","carrot");
-            foodLabels.put("hot dog","hot dog");
-            foodLabels.put("pizza","pizza");
-            foodLabels.put("donut","donut");
-            foodLabels.put("cake","cake");
-//            if(foodLabels.containsKey(results.get(0).getTitle())){
-//                result = String.valueOf(results.get(0).getTitle());
-//            }
-            result = String.valueOf(results.get(0).getTitle());
+            foodLabels.put("Apple","Apple");
+            foodLabels.put("Banana","Banana");
+            foodLabels.put("Sandwich","Sandwich");
+            foodLabels.put("Orange","Orange");
+            foodLabels.put("Broccoli","Broccoli");
+            foodLabels.put("Carrot","Carrot");
+            foodLabels.put("Hot dog","Hot dog");
+            foodLabels.put("Pizza","Pizza");
+            foodLabels.put("Donut","Donut");
+            foodLabels.put("Cake","Cake");
+            if(foodLabels.containsKey(results.get(0).getTitle())){
+                result = String.valueOf(results.get(0).getTitle());
+            }
+//            result = String.valueOf(results.get(0).getTitle());
 
             //Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
             //result = String.valueOf(results.get(1).getTitle());
